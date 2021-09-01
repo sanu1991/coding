@@ -46,6 +46,19 @@ $(document).ready(function () {
             return false;
         }
     });
+
+
+
+    // Js for modal box
+    $(".btn").click(function () {
+        $(".modal").fadeIn(500);
+    });
+
+    $(".cancel").click(function () {
+        $(".modal").fadeOut(500);
+    });
+
+
 });
 
     // $(document).ready(function () {
