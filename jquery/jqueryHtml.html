@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery - html, Filtering</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p id="test1">This is some <b>bold</b> text in a paragraph.</p> <br>
+    <button id="btn1">Show Text</button>
+    <button id="btn2">Show HTML</button>
+    <br>
+    <hr>
+
+    <p>Name: <input type="text" id="test3" value="Mickey Mouse"></p>
+    <button id="btn3">Show Value</button> <br>
+    <hr>
+
+    <p id="test4">This is a paragraph.</p>
+    <p id="test5">This is another paragraph.</p>
+    <p>Input field: <input type="text" id="test6" value="Mickey Mouse"></p>
+    <button id="btn4">Set Text</button>
+    <button id="btn5">Set HTML</button>
+    <button id="btn6">Set Value</button>
+    <hr>
+
+    <p><a href="https://www.w3schools.com" title="some title" id="link">W3Schools.com</a></p>
+    <button id="btn7">Change href and title</button>
+    <hr>
+
+    <p id="test8">This is a paragraph.</p>
+    <p id="test9">This is another paragraph.</p>
+    <button id="btn8">Prepend text</button>
+    <button id="btn9">append text</button>
+    <hr>
+
+    <p id="test10">This is a paragraph.</p>
+    <p id="test11">This is another paragraph.</p> <br>
+    <button id="btn10">Before text</button>
+    <button id="btn11">After text</button>
+    <hr>
+
+    <div id="div1" style="height:100px;width:300px;border:1px solid black;background-color:yellow;">
+        This is some text in the div.
+        <p>This is a paragraph in the div.</p>
+        <p>This is another paragraph in the div.</p>
+    </div> <br>
+    <button id="btn12">Empty the div element</button>
+    <button id="btn13">Empty the div element</button>
+    <hr>
+
+
+    <div>
+        <h4>jquery CSS</h4>
+        <input type="text" id="focus" placeholder="multipleCSS">
+    </div>
+    <hr>
+
+    <h2>Filterable Table</h2>
+    <p>Type something in the input field to search the table for first names, last names or emails:</p>
+    <input id="myInput" type="text" placeholder="Search..">
+    <br><br>
+    <table>
+        <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+            <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>john@example.com</td>
+            </tr>
+            <tr>
+                <td>Mary</td>
+                <td>Moe</td>
+                <td>mary@mail.com</td>
+            </tr>
+            <tr>
+                <td>July</td>
+                <td>Dooley</td>
+                <td>july@greatstuff.com</td>
+            </tr>
+            <tr>
+                <td>Anja</td>
+                <td>Ravendale</td>
+                <td>a_r@test.com</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+
+
+    <h2>Filterable List</h2>
+    <p>Type something in the input field to search the list for specific items:</p>
+    <input id="myInput1" type="text" placeholder="Search..">
+    <br>
+    <ul id="myList">
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+        <li>Fourth</li>
+    </ul>
+
+
+
+</body>
+
+<script>
+
+    $(document).ready(function () {
+        // html-get : text(), html(), val()
+        $("#btn1").click(function () {
+            alert("Text: " + $("#test1").text());
+        });
+        $("#btn2").click(function () {
+            alert("HTML: " + $("#test1").html());
+        });
+        $("#btn3").click(function () {
+            alert("Value: " + $("#test3").val());
+        });
+        // html-set : text(), html(), val()
+        $("#btn4").click(function () {
+            $("#test4").text("Hello world!");
+        });
+        $("#btn5").click(function () {
+            $("#test5").html("<b>Hello world!</b>");
+        });
+        $("#btn6").click(function () {
+            $("#test6").val("Dolly Duck");
+        });
+        // html-set- attribute - attr()
+        $("#btn7").click(function () {
+            $("#link").attr({
+                "href": "https://www.w3schools.com/jquery/",
+                "title": "W3Schools jQuery Tutorial"
+            });
+            $("#link").text("https://www.w3schools.com/jquery/")
+        });
+        // html -add : add new html content -- append,prepend,after,before
+        $("#btn8").click(function () {
+            $("#test8").prepend("<b>Prepended text</b>. ");
+        });
+        $("#btn9").click(function () {
+            $("#test9").append("<b>Appended text</b>. ");
+        });
+        $("#btn10").click(function () {
+            $("#test10").before("<b>Before text</b>. ");
+        });
+        $("#btn11").click(function () {
+            $("#test11").after("<b>After text</b>. ");
+        });
+        // html - remove html element/ content -- remove, after
+        $("#btn12").click(function () {
+            $("#div1").remove()
+        });
+        $("#btn13").click(function () {
+            $("#div1").empty()
+        });
+
+        // jquery css()
+        $("#focus").focus(function () {
+            $(this).css({ "font-size": "20px", "color": "red" })
+        });
+
+        // << : Filter : >>
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+
+        $("#myInput1").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myList li").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+
+
+    });
+</script>
+
+</html>

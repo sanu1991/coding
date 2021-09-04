@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery Event</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        #slider {
+            border-color: yellow;
+            width: 300px;
+            margin-left: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="color: blueviolet;">Jquery Event practice</h1>
+    <hr>
+    <div id="div1">
+
+        <h3>1.change() event</h3>
+        <h5>(*The change() event is limited to 'input' elements, 'textarea' boxes and 'select' elements. )</h5>
+        <textarea id="txtarea"></textarea> <br>
+        Name: <input type="text" name="name" placeholder="change()" class="change">
+        <span> *Write something in the input field, and then press enter or click outside the field to hide this
+            textbox</span> <br> <br>
+        Car:
+        <select class="change1" name="cars">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+        </select>
+        <span>*Select an option in the drop-down list to show the textbox back</span>
+        <hr>
+
+
+        <h3>2. keyup() , keypress() , keydown() event</h3>
+        Password: <input type="text" name="Passwprd" placeholder="keydown-keyup-keypress" id="keyDownUpPress">
+        <h5>(*press any key in the text box for keyup(), keypress() event & press the 'backspace key' for
+            jQuery keydown() event )</h5>
+        <hr>
+
+
+        <h3 id="p">3. hover on this text to show the hover() event</h3>
+        <hr>
+
+
+        <h3>4. Click here to show delegate() event</h3>
+        <button id="btn" style="font-size: 18px;">delegate()</button> <br> <br>
+        <hr>
+
+        <h3>5. jQuery mouseenter()/mouseover() , mouseleave()/mouseout(), mousedown()/click() Event :</h3>
+        <button id="btn1" style="font-size: 18px;">Click Here</button>
+        <span>*click or mousedown - to show the mousedown() event</span> <br> <hr>
+
+        <h3 id="h3">6. jquery focus()</h3>
+        <input type="text" placeholder="focus()" id="focus" style="font-size: 18px;">
+    </div>
+
+</body>
+
+<script>
+    $(document).ready(function () {
+
+        // 1. jquery change()
+        $(".change").change(function () {
+            $(this).css("background-color", "#D6D6FF");
+            $("#txtarea").slideUp(1000);
+        });
+        $(".change1").change(function () {
+            $(this).css("background-color", "skyblue");
+            $("#txtarea").slideDown(1000);
+        });
+        // 2. jQuery~  keydown() - keyup() - keypress()
+        $("#keyDownUpPress").keydown(function () {
+            $(this).css("background-color", "skyblue");
+        });
+        $("#keyDownUpPress").keyup(function () {
+            $(this).css("background-color", "lightgrey");
+        });
+        $("#keyDownUpPress").keypress(function () {
+            $(this).css("background-color", "orange");
+        });
+        // 3. jQuery hover( )
+        $("#p").hover(function () {
+            $(this).css("background-color", "red");
+        }, function () {
+            $(this).css("background-color", "white");
+        });
+        // 4. jQuery delegate()
+        $("body").delegate("#btn", "click", function () {
+            $("#btn").after("<p> New paragraph. </p>");
+        });
+        // 5. jQuery mouseenter()/mouseover() , mouseleave()/mouseout(), mousedown()/click()
+        $("#btn1").mouseenter(function () {
+            $(this).css({ "font-size": "20px" })
+        });
+        // $("#btn1").mouseover(function () {
+        //     $(this).css({ "font-size": "20px" })
+        // });
+        $("#btn1").mouseleave(function () {
+            $(this).css({ "font-size": "18px" })
+        });
+        // $("#btn1").mouseout(function () {
+        //     $(this).css({ "font-size": "18px" })
+        // });
+        $("#btn1").mousedown(function () {
+            $(this).css({ "color": "red" });
+        });
+        // $("#btn1").click(function () {
+        //     $(this).css({ "color": "red" });
+        // });
+
+        // 6. jQuery focus()
+        $("#focus").focus(function () {
+            $(this).css({ "font-size": "20px", "color": "red" });
+        });
+        $("#h3").click(function () {
+            $("#focus").css({ "font-size": "18px", "color": "black" });
+        });
+
+
+    });
+</script>
+
+</html>

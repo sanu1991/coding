@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery Form validation</title>
+    <!-- from- https://www.youtube.com/watch?v=XX3mdsTQ3Xc -->
+    <!-- https://www.youtube.com/watch?v=0LDTUwLjnuM -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+        .logform {
+            text-align: center;
+            /* justify-content: center; */
+            /* margin-top: 120px; */
+            border: 3px solid rgb(8, 170, 148);
+            border-radius: 20px;
+            margin: 80px 380px 0px 380px ;
+            padding: 20px 2px 40px 2px ;
+            background-color: rgb(250, 246, 207);
+        }
+
+        #email {
+            font-size: 20px;
+            margin: 2px 103px 2px 2px;
+            padding: 2px 2px 2px 2px ;
+        }
+
+        #input1 {
+            border: 3px solid rgb(8, 170, 148);
+            border-radius: 5px;
+            width: 40%;
+            margin: 2px 2px 2px 2px ;
+            padding: 2px 2px 2px 2px ;
+        }
+        #username {
+            font-size: 20px;
+            margin: 2px 59px 2px -2px ;
+            padding: 2px 2px 2px 2px ;
+        }
+
+        #input2 {
+            border: 3px solid rgb(8, 170, 148);
+            border-radius: 5px;
+            width: 40%;
+            margin: 2px 2px 2px 2px ;
+            padding: 2px 2px 2px 2px ;
+        }
+        #password {
+            font-size: 20px;
+            margin: 2px 78px 2px -1px ;
+            padding: 2px 2px 2px 2px ;
+        }
+
+        #input3 {
+            border: 3px solid rgb(8, 170, 148);
+            border-radius: 5px;
+            width: 40%;
+            margin: 2px 2px 2px 2px ;
+            padding: 2px 2px 2px 2px ;
+        }
+        #confirmpassword {
+            font-size: 20px;
+            margin: 2px 10px 2px -2px ;
+            padding: 2px 2px 2px 2px ;
+        }
+
+        #input4 {
+            border: 3px solid rgb(8, 170, 148);
+            border-radius: 5px;
+            width: 40%;
+            margin: 2px 2px 2px 2px ;
+            padding: 2px 2px 2px 2px ;
+        }
+
+        .submit{
+            font-size: 20px;
+            border: 3px solid rgb(166, 165, 199);
+            border-radius: 5px;
+            padding: 5px 15px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="logform">
+        <h1>LOGIN</h1>
+        <form method="post">
+            <label id="email" for="">Email</label>
+            <input id="input1" type="text" class="email" autocomplete="off">
+            <h5 class="error" style="height: 1px;"></h5>
+
+            <label id="username" for="">User Name</label>
+            <input id="input2" type="text" class="name" autocomplete="off">
+            <h5 class="error1" style="height: 1px;"></h5>
+
+            <label id="password" for="">Password</label>
+            <input id="input3" type="text" class="password" autocomplete="off">
+            <h5 class="error2" style="height: 2px;"></h5>
+
+            <label id="confirmpassword" for="">Confirm Password</label>
+            <input id="input4" type="text" class="confirmpassword" autocomplete="off">
+            <h5 class="error3" style="height: 2px;"></h5>
+
+            <input class="submit" type="submit">
+        </form>
+    </div>
+</body>
+
+<script>
+    //  function run after completion of page load/refresh
+    $(document).ready(function () {
+
+
+        // to change onspot validation
+        let eml = true;
+        let usrnm = true;
+        let pswrd = true;
+        let cnfrmpswrd = true;
+
+
+        // email box keyup function
+        $('.email').keyup(function () {
+            emlchk();
+        });
+        function emlchk() {
+            let email = $('.email').val();
+            if (email == '') {
+                $('.error').html('*please enter email').css('color', 'red');
+                $('.email').css('border', '1px solid red');
+                // $('.email').focus();
+                // if the value of 'name' right
+                usrnm = false;
+                // to stop form auto submit
+                return false;
+            }
+            else if (email.indexOf("@") < 0 || email.indexOf(".") < 0) {
+                $('.error').html('*Email must contain @ and .').css('color', 'red');
+                $('.email').css('border', '1px solid red');
+                // $('.email').focus();
+                eml = false;
+                return false;
+            } else {
+                $('.error').html('ok');
+                $('.email').css('border', '3px solid lightgreen');
+                $('.error').css('color', 'lightgreen');
+            }
+        }
+
+
+        // username box keyup function
+        $('.name').keyup(function () {
+            usrnmchk();
+        });
+
+        function usrnmchk() {
+            let name = $('.name').val();
+            if (name == '') {
+                $('.error1').html('*please enter name').css('color', 'red');
+                $('.name').css('border', '1px solid red');
+                // $('.name').focus();
+                usrnm = false;
+                return false;
+            }
+            else if ((name.length < 4) || (name.length > 21)) {
+                $('.error1').html('User name should be within 4 to 19 letters').css('color', 'red');
+                $('.name').css('border', '1px solid red');
+                // $('.name').focus();
+                usrnm = false;
+                return false;
+            }
+            else {
+                $('.error1').html('ok');
+                $('.name').css('border', '3px solid lightgreen');
+                $('.error1').css('color', 'lightgreen');
+            }
+        }
+
+
+
+        // password box keyup function
+        $('.password').keyup(function () {
+            pswrdchk();
+        });
+        function pswrdchk() {
+            let pass = $('.password').val();
+            if (pass == '') {
+                $('.error2').html('*please enter password').css('color', 'red');
+                $('.password').css('border', '1px solid red');
+                // $('.password').focus();
+                pswrd = false;
+                return false;
+            }
+            else if ((pass.length < 8) || (pass.length > 21)) {
+                $('.error2').html('*password should be within 8 to 19 letters').css('color', 'red');
+                $('.password').css('border', '1px solid red');
+                // $('.password').focus();
+                pswrd = false;
+                return false;
+            }
+            else if (pass.search(/[0-9]/) == -1) {
+                $('.error2').html('*password should be -atleast one numeric character').css('color', 'red');
+                $('.password').css('border', '1px solid red');
+                // $('.password').focus();
+                pswrd = false;
+                return false;
+            }
+            else if ((pass.search(/[a-z]/) == -1) || (pass.search(/[A-Z]/) == -1)) {
+                $('.error2').html('*password should be -atleast one lowercase character and uppercase character').css('color', 'red');
+                $('.password').css('border', '1px solid red');
+                // $('.password').focus();
+                pswrd = false;
+                return false;
+            }
+            else if (pass.search(/[~\!\@\#\$\%\^\&\*\+\<\>\?]/) == -1) {
+                $('.error2').html('*password should be -atleast one special character').css('color', 'red');
+                $('.password').css('border', '1px solid red');
+                // $('.password').focus();
+                pswrd = false;
+                return false;
+            }
+            else {
+                $('.error2').html('ok');
+                $('.password').css('border', '3px solid lightgreen');
+                $('.error2').css('color', 'lightgreen');
+            }
+        }
+
+
+
+        // confirm password box keyup function
+        $('.confirmpassword').keyup(function () {
+            cnfrmpswrdchk();
+        });
+
+        function cnfrmpswrdchk() {
+            let conpass = $('.confirmpassword').val();
+            let pass = $('.password').val();
+
+            if (conpass == '') {
+                $('.error3').html('*please confirm password').css('color', 'red');
+                $('.confirmpassword').css('border', '1px solid red');
+                // $('.confirmpassword').focus();
+                cnfrmpswrd = false;
+                return false;
+            } else if (conpass != pass) {
+                $('.error3').html('*password are not matching').css('color', 'red');
+                $('.confirmpassword').css('border', '1px solid red');
+                // $('.confirmpassword').focus();
+                cnfrmpswrd = false;
+                return false;
+            }
+            else {
+                $('.error3').html('*password matched');
+                $('.confirmpassword').css('border', '3px solid lightgreen');
+                $('.error3').css('color', 'lightgreen');
+            }
+
+        }
+
+
+        // submit button click function
+        $('.submit').click(function () {
+            eml = true;
+            usrnm = true;
+            pswrd = true;
+            cnfrmpswrd = true;
+
+            emlchk();
+            usrnmchk();
+            pswrdchk();
+            cnfrmpswrdchk();
+
+            if ((eml == true) && (usrnm == true) && (pswrd == true) && (cnfrmpswrd == true)) {
+                alert("your form will be submitted");
+                return true; // submit form
+            } else {
+
+                return false;
+            }
+
+        });
+
+
+    });
+</script>
+
+</html>
