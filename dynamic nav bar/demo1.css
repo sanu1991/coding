@@ -1,0 +1,53 @@
+#nav{
+    width: 100%;  
+    /* position: fixed; */
+}
+#body{
+    text-align: center;    
+}
+img{
+    filter: opacity(30%);
+    width: 500px;
+}
+
+.framer{
+    font-size: 20px;
+    margin: 0px 0px 0px 230px;
+    padding: 9px 32px;
+    /* border: 1px solid black; */
+    text-decoration: none;
+}
+.framer:hover{
+    background-color: rgb(44, 43, 43);
+    color: white;
+}
+.whyFramer{
+    font-size: 20px;
+    padding: 9px 32px;
+    /* border: 1px solid black; */
+    text-decoration: none;
+}
+.team{
+    font-size: 20px;
+    padding: 93px 32px;
+    /* border: 1px solid black; */
+    text-decoration: none;
+}
+.showcase{
+    font-size: 20px;
+    padding: 9px 32px;
+    /* border: 1px solid black; */
+    text-decoration: none;
+}
+.developers{
+    font-size: 20px;
+    padding: 9px 32px;
+    /* border: 1px solid black; */
+    text-decoration: none;
+}
+.resources{
+    font-size: 20px;
+    padding: 9px 32px;
+    /* border: 1px solid black; */
+    text-decoration: none;
+}
