@@ -1,0 +1,32 @@
+
+#div{
+    width: 100%;
+    text-align: center;
+    position: fixed;
+}
+#body{
+    text-align: center;  
+    height: 800px;  
+}
+#logo{
+    padding-top: 0px;
+}
+#flogo{
+    filter: opacity(30%);
+    /* width: 300px; */
+    margin-top: 130px;
+}
+
+.menu:hover{
+    background-color: rgb(44, 43, 43);
+    color: white;
+}
+.menu{
+    font-size: 20px;
+    margin: 0px 0px 0px 0px;
+    padding: 7px 50px;
+    color: black;
+    /* border: 1px solid black; */
+    text-decoration: none;
+}
+
