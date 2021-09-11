@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive website</title>
+
+    <!-- how to make responsive -->
+    <link rel="stylesheet" media="(min-width: 1024px) and (max-width: 1440px)" href="laptop.css">
+    <link rel="stylesheet" media="(min-width: 768px) and (max-width: 1024px)" href="tab.css">
+    <link rel="stylesheet" media="(min-width: 425px) and (max-width: 768px)" href="lmobile.css">
+    <link rel="stylesheet" media="(min-width: 220px) and (max-width: 425px)" href="mobile.css">
+
+    <!-- <link rel="stylesheet" href="laptop.css"> -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div id="gridContainer">
+        <div id="nav">
+            <img class="menu" id="logo" src="apple.png" alt="Error">
+            <a class="menu" href="#">Mac</a>
+            <a class="menu" href="#">iPad</a>
+            <a class="menu" href="#">iPhone</a>
+            <a class="menu" href="#">Watch</a>
+            <a class="menu" href="#">TV</a>
+            <a class="menu" href="#">Music</a>
+            <a class="menu" href="#">Support</a>
+            <i id="search" class="menu fa fa-search" aria-hidden="true"></i>
+            <img class="menu" id="note" src="https://img.icons8.com/plasticine/35/000000/note.png" />
+        </div>
+
+        <div id="nav1">
+            <a id="appleId"><b>Apple ID</b></a>
+            <div id="right">
+                <a href="#" class="menu1"><b>Sign In</b></a>
+                <a href="#" class="menu1"><b>Create Your Apple ID</b></a>
+                <a href="#" class="menu1"><b>FAQ</b></a>             
+            </div>
+        </div>
+
+        <div id="login">
+            <b class="menu2" id="appleID1">Apple ID</b>
+            <br>
+            <b class="menu2" id="manage">Manage your Apple account</b>
+            <br>
+            <input id="input1" type="text" placeholder="Apple ID"> <br>
+
+            <div id="input2">
+                <i class="fa fa-sign-in" aria-hidden="true"></i>
+                <input id="inputField" type="text" placeholder="Password">
+            </div>
+
+            <b class="menu2" id="remember">Remember me</b> <br>
+
+            <b class="menu2" id="forget">Forget Apple ID or password ?</b>
+        </div>
+    </div>
+
+</body>
+
+</html>
