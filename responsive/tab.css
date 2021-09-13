@@ -1,0 +1,112 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Urbanist', sans-serif;
+}
+body{
+    background-image: url('bckgrnd.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+  /* background-size: 100% 100%; */
+  background-size: cover;
+}
+
+/* for smooth scrolling  */
+html {
+    scroll-behavior: smooth;
+}
+
+/* for grid view */
+
+/* Naming Grid Items */
+#nav { grid-area: navbar; }
+#nav1 { grid-area: navbar1; }
+#login { grid-area: login; }
+
+
+#gridContainer {
+    display: grid;
+    grid-template-areas: 'navbar navbar' 'navbar1 navbar2' 'login login';
+}
+ /* CSS for 1st div */
+#nav{
+    position: fixed;
+display: flex;
+align-content: center;
+justify-content: center;
+height: 7%;
+width: 100%;
+background-color: black;
+/* border: 1px solid red; */
+}
+#logo{  
+filter: invert(100%); 
+/* border: 1px solid red;    */
+}
+.menu{
+text-decoration: none;
+color: white;
+font-size: 1.2vw;
+padding: 10px 28px;
+/* border: 1px solid red; */
+}
+/* CSS for 2nd div */
+#nav1{
+    /* text-align: center; */
+    
+    width: 100%;
+    height: 5%;
+    padding: 0px 55px;
+    position: fixed;
+    margin-top: 38px;
+    display: flex;
+    background-color: rgb(231, 229, 229);
+    /* border: 1px solid red; */
+}
+#appleId{
+    align-items: center;
+    font-size: 1.5vw;
+    padding: 5px 15px;
+    /* border: 1px solid red; */
+}
+#right{  
+    margin: 1px 0px 0px 360px;
+}
+.menu1{  
+    font-size: 1.2vw;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+    color: black;
+    /* border: 1px solid red; */
+}
+
+
+#login{
+    color: rgb(9, 3, 24);
+    text-align: center;
+    margin: 200px 0px;
+    line-height: 2;
+    /* border: 1px solid red; */
+}
+#appleID1{
+    font-size: 3vw;
+}
+#manage{
+    font-size: 1vw;
+}
+
+#input2{
+    position: relative;
+}
+#input2 i{
+    position: absolute;
+margin: 8px 2px 2px 140px;
+}
+
+#remember{
+    font-size: 1.1vw;
+}
+#forget{
+    font-size: 0.8vw;
+}
