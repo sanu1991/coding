@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- to ensure proper rendering and touch zooming on mobile devices. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bootstrap Tutorial- https://www.tutorialspoint.com/bootstrap/index.htm</title>
+    <!-- use CSS CDN  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!-- use Download file -->
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- Responsive Images : -->
+        <img src="bckgrnd.jpeg" class="img-responsive" alt="Responsive image"> <br>
+        <a href="#" class="bg-primary text-light">Click Me</a> <br>
+        <!-- Emphasis -->
+        <p class="text-left">Left aligned text.</p>
+        <p class="text-center">Center aligned text.</p>
+        <p class="text-right">Right aligned text.</p> <!-- ? -->
+        <p class="text-muted">This content is muted</p>
+        <p class="text-primary">This content carries a primary class</p>
+        <p class="text-success">This content carries a success class</p>
+        <p class="text-info">This content carries a info class</p>
+        <p class="text-warning">This content carries a warning class</p>
+        <p class="text-danger">This content carries a danger class</p>
+        <!-- Abbreviations -->
+        <abbr title="Real Simple Syndication" class="initialism">RSS</abbr>
+        <abbr title="World Wide Web" class="initialism">WWW</abbr>
+        <!-- Blockquotes -->
+        <blockquote class="pull-right">This is a blockquote aligned to the right.
+            <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+        </blockquote> <!-- ? -->
+        <!-- Lists -->
+        <h4>Example of Unstyled List</h4>
+        <ul class="list-unstyled">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+        </ul>
+
+        <h4>Example of Inline List</h4>
+        <ul class="list-inline">
+            <!-- ? -->
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+        </ul>
+
+        
+        <!-- Lead Body Copy -->
+        <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus maxime consequuntur,
+            necessitatibus consectetur aspernatur sed deserunt, perspiciatis pariatur repellendus nam, voluptas aliquam?
+            Dignissimos magni officiis, molestias ab modi iste nemo.</p>
+        <h1 class="font-weight-bold">Bold text</h1> <!-- ? -->
+        <h1 class="font-weight-normal">Bold text</h1> <!-- ? -->
+        <h1 class="font-italic">Bold text</h1> <!-- ? -->
+        <!-- Bootstrap - Code -->
+        <p><code>&lt;header&gt;</code> is wrapped as an inline element.</p>
+        <p>To display code as a standalone block element use &lt;pre&gt; tag as:</p>
+        <pre>
+        &lt;article&gt;
+        &lt;h1&gt;Article Heading&lt;/h1&gt;
+        &lt;/article&gt;
+        </pre>
+        <!-- Bootstrap - Tables(Striped Table/Bordered Table/Hover Table/Condensed Table) -->
+        <!-- <table class = "table"> -->
+        <!-- <table class = "table table-striped"> -->
+        <!-- <table class = "table table-bordered"> -->
+        <table class="table table-hover">
+            <!-- <table class = "table table-condensed"> -->
+            <caption>Basic Table Layout</caption> <!-- ? -->
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tanmay</td>
+                    <td>Bangalore</td>
+                </tr>
+                <tr>
+                    <td>Sachin</td>
+                    <td>Mumbai</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Responsive Tables & Contextual classes -->
+        <div class="table-responsive"></div><!-- ? -->
+        <table class="table">
+            <caption>Contextual Table Layout</caption>
+
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Payment Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr class="active">
+                    <!-- ? -->
+                    <td>Product1</td>
+                    <td>23/11/2013</td>
+                    <td>Pending</td>
+                </tr>
+
+                <tr class="success">
+                    <!-- ? -->
+                    <td>Product2</td>
+                    <td>10/11/2013</td>
+                    <td>Delivered</td>
+                </tr>
+
+                <tr class="warning">
+                    <!-- ? -->
+                    <td>Product3</td>
+                    <td>20/10/2013</td>
+                    <td>In Call to confirm</td>
+                </tr>
+
+                <tr class="danger">
+                    <!-- ? -->
+                    <td>Product4</td>
+                    <td>20/10/2013</td>
+                    <td>Declined</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <hr>
+    <!-- Bootstrap - Forms -->
+    <!-- a. Vertical or Basic Form -->
+    <form role="form">
+
+        <div class="form-group">
+            <!-- ? -->
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter Name">
+            <!-- id = "name" ?? -->
+        </div>
+
+        <div class="form-group">
+            <label for="inputfile">File input</label>
+            <input type="file" id="inputfile"> <!-- ? -->
+            <p class="help-block">Example block-level help text here.</p> <!-- ? -->
+        </div>
+
+        <div class="checkbox">
+            <!-- ? -->
+            <label><input type="checkbox"> Check me out</label>
+        </div>
+
+        <button type="submit" class="btn btn-default">Submit</button> <!-- ? -->
+    </form>
+    <hr>
+    <!-- Inline Form -->
+    <form class="form-inline" role="form">
+        <!-- ? -->
+
+        <div class="form-group">
+            <label class="sr-only" for="name">Name</label> <!-- ? -->
+            <input type="text" class="form-control" id="name" placeholder="Enter Name">
+        </div>
+
+        <div class="form-group">
+            <label class="sr-only" for="inputfile">File input</label>
+            <input type="file" id="inputfile">
+        </div>
+
+        <div class="checkbox">
+            <label><input type="checkbox"> Check me out</label>
+        </div>
+
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+    <hr>
+    <!-- CheckBoxes and Radio Buttons -->
+    <label for="name">Example of Default Checkbox and radio button </label>
+
+    <div class="checkbox">
+        <!-- ? -->
+        <label>
+            <input type="checkbox" value="">Option 1
+        </label>
+    </div>
+
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="">Option 2
+        </label>
+    </div>
+
+    <div class="radio">
+        <!-- ? -->
+        <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Option 1
+        </label> <!-- ? -->
+    </div>
+
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            Option 2 - selecting it will deselect option 1
+        </label>
+    </div>
+    <!-- Inline Checkbox and radio button -->
+    <label for="name">Example of Inline Checkbox and radio button </label>
+
+    <div>
+        <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox1" value="option1"> Option 1
+        </label><!-- ? -->
+
+        <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox2" value="option2"> Option 2
+        </label>
+
+        <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox3" value="option3"> Option 3
+        </label>
+
+        <label class="checkbox-inline">
+            <input type="radio" name="optionsRadiosinline" id="optionsRadios3" value="option1" checked> Option 1
+        </label>
+
+        <label class="checkbox-inline">
+            <input type="radio" name="optionsRadiosinline" id="optionsRadios4" value="option2"> Option 2
+        </label>
+    </div> <hr>
+    <!-- Selects -->
+    <form role="form">
+
+        <div class="form-group">
+            <label for="name">Select list</label>
+
+            <select class="form-control">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+
+            <label for="name">Mutiple Select list</label>
+
+            <select multiple class="form-control">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+
+        </div>
+
+    </form>
+
+
+
+
+
+    </div>
+
+
+    <!-- use JS CDN  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <!-- use Download file -->
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+</body>
+
+</html>
