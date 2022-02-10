@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div>
+        <table class="table table-bordered text-center mb-0">
+            <thead class="bg-secondary text-dark">
+                <tr>
+                    <th>Products</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="load-table" class="align-middle">
+    </div>
+
+    <div id="error-message" class="messages"></div>
+    <div id="success-message" class="messages"></div>
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            //Show Success or Error Messages
+            function message(message, status) {
+                if (status == true) {
+                    $("#success-message").html(message).slideDown();
+                    $("#error-message").slideUp();
+                    setTimeout(function () {
+                        $("#success-message").slideUp();
+                    }, 4000);
+
+                } else if (status == false) {
+                    $("#error-message").html(message).slideDown();
+                    $("#success-message").slideUp();
+                    setTimeout(function () {
+                        $("#error-message").slideUp();
+                    }, 4000);
+                }
+            }
+
+
+            function myFunction(uuid) {
+                var qun = parseInt($("#quantity_" + uuid).val());
+                var ip = parseInt($("#item_Price_" + uuid).val());
+                var total = qun + ip;
+                $("#total_Price_" + uuid).val(total);
+                console.log(e);
+            }
+
+            function uuidv4() {
+                return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+                    (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+                );
+            }
+
+            // fetch cart producvts
+            function loadTable() {
+                $("#load-table").html("");
+                $.ajax({
+                    url: 'fetch_cart_api.php',
+                    type: "GET",
+                    success: function (data) {
+                        console.log(data);
+                        if (data.status == false) {
+                            $("#load-table").append("<tr><td colspan='6'><h2>" + data.message + "</h2></td></tr>");
+                        } else {
+                            $.each(data, function (key, value) {
+                                var uuid = uuidv4();
+                                var quantity_ = "quantity_" + uuid;
+                                var item_Price = "item_Price_" + uuid;
+                                var total_Price = "total_Price_" + uuid;
+
+                                $("#load-table").append(
+                                    '<tr>' +
+                                    '<td class="align-middle"><img src="img/' + value.item_image + '" alt="" style="width: 50px;"> ' + value.item_name + ' </td>' +
+
+                                    '<td class="align-middle"><input style="width: 100px;" type="text" name="item_price" id="' + item_Price + '" class="txt" value="' + value.item_price + '" /></td>' +
+
+                                    '<td class="align-middle">' +
+                                    '<input style="width: 50px;" type="text" name="quantity" id="' + quantity_ + '" class="txt" value="1" onkeyup="myFunction( ' + uuid + ' )"/>' +
+                                    '</td>' +
+
+                                    '<td class="align-middle"><input style="width: 50px;" type="text" name="total_price" id="' + total_Price + '" class="txt" value="" /></td>' +
+
+                                    '</tr>'
+                                );
+                            });
+                        }
+                    }
+                });
+            }
+            loadTable();
+
+        });
+    </script>
+</body>
+
+</html>
