@@ -1,0 +1,124 @@
+<!-- // git // -->
+<!-- To config. or set the user name / email :
+git config --global user.name Sayan
+git config --global user.email spandab.ee@gmail.com -->
+
+<!-- code . -- to open the vs code.  -->
+
+<!-- git init --  to create repository  -->
+
+<!-- 1 st install node.js -- for chk ,  node -v -->
+
+<!-- 2 nd install npm , by -- npm install -g npm  , check-  npm -v -->
+
+<!-- 3 rd install react by, npm install -g create-react-app , check -- create-react-app --version -->
+
+<!-- NPM - Node Package Manager.
+NPX - Node Package Execute.
+after 5.2.0 version, NPX will work in the place of NPM, 
+================================================
+1. npx create-react-app my-react-app -- open gitbas and type it and enter,  my-react-app is name of the name which i choose 
+2. cd my-react-app -- to move to the my-react-app directory
+3. npm start -- to run react application
+-->
+
+<!-- create github json server -- https://www.youtube.com/watch?v=eWCQxOhbdTI -->
+
+<!-- make online api of json data -- mockaroo -- https://www.youtube.com/watch?v=-Q3ktQXevc0  -->
+
+<!-- JSON server  -- use https://www.youtube.com/watch?v=4NZnQt1Rz1s -->
+
+<!-- npx kill-port 3000 -- to close the port  -->
+
+<!-- ctrl + c  - to close the react  -->
+
+<!-- npm install react-bootstrap bootstrap -- to install react-bootstrap and bootstrap,  npm install bootstrap  -- to install bootstrap only
+then import "  import 'bootstrap/dist/css/bootstrap.min.css';  "
+and "  import 'bootstrap/dist/js/bootstrap.bundle.min.js';  "  at index.js-->
+
+<!-- npm install react-icons   --- to install react-icon package  -->
+
+<!-- npm install --save sweetalert2 sweetalert2-react-content  ---  to install sweet alert 2  https://www.youtube.com/watch?v=nrjYPjAkW6Q -->
+
+<!-- npm install react-router-dom -- to install router (https://v5.reactrouter.com/web/guides/quick-start), then import --
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    Link
+} from "react-router-dom";
+- at app.js
+
+basic structure to run router at app.js:
+    <Router>
+      <Header />
+        <Routes>
+          
+          <Route path="/">
+            <Route index element={<Items />} />
+            <Route path="cart" element={<Cart />} />
+            <Route element={<NotFound />} />
+          </Route>
+
+          {/* or */}
+
+          <Route path='/' element={<Items />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="*" element={<NotFound />} /> */}
+
+      </Routes>
+  </Router>
+
+-->
+
+<!-- use scss in react : 
+install -  npm install --save-dev node-sass  -->
+<!-- About scss -- https://www.youtube.com/watch?v=tEQOdFgUXI4   -->
+<!-- project using scss and bem methodology : https://www.youtube.com/watch?v=Fome4gcihzM  -->
+
+<!-- npm i react-paginate  --  to install react pagination & 
+  import -- import ReactPaginate from 'react-paginate';
+  https://www.youtube.com/watch?v=MnkjoXWM7Vk   
+  https://www.youtube.com/watch?v=kMuRr53RjcE -->
+
+
+<!-- npm i redux react-redux   -- to install redux  -->
+
+<!-- npm install axios  -->
+
+<!-- To change the port from 3000
+create a .env file under main folder, and write PORT=3001 and save.
+or
+write - "set PORT=3001 && react-scripts start"  under "start" under "scripts" under package.json file.
+-->
+
+<!-- npm uninstall --save _______  --put your package name  -- to uninstall    -->
+
+
+<!-- https://github.com/dsznajder/vscode-react-javascript-snippets/blob/HEAD/docs/Snippets.md
+
+rfce -- shortcut of besic react code  
+clg -- console.log();
+imr -- import React from 'react';
+-->
+
+<!-- https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css   -- fontawesome CDN  -->
+
+<!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>  -- sweet alert CDN (https://www.youtube.com/watch?v=sesTNA4dldc -- how to use it?) -->
+
+<!-- position: "absolute", left: "50%", top: "50%", transform: "translate(-50%, -50%)"  --  vertically & horizontally center  -->
+
+<!-- https://icon-icons.com/  -- free fav icon  -->
+
+<!-- https://www.youtube.com/watch?v=mdO18zv3oGQ -- How To Host React JS Website Live for Free using GitHub  -->
+
+<!-- const uniqueList =
+        [
+            ...new Set( // new Set - use to avoid repeatation // ... - spread operator within [], use to convert object to array
+                Fakedata.map((curItem) => {
+                    return curItem.type;
+                })
+            )
+        ]; -->
+
+<!-- search filter work -- https://www.youtube.com/watch?v=mZvKPtH9Fzo&t=4s         -->
